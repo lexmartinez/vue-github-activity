@@ -34,7 +34,7 @@ Vue.use(GithubFeed);
 On your template you can now use html like this to render the activity feed: 
 
 ```html
-<github-feed></github-feed>
+<github-feed user="lexmartinez"></github-feed>
 ```
 
 ## License
