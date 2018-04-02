@@ -5,7 +5,7 @@ Simple VueJS component that creates a feed panel with your recent GitHub activit
 
 See it in action on [my website](https://lexmartinez.com/)
 
-![](https://lexmartinez.com/static/favicon.png)
+![](https://lexmartinez.com/static/faviconx.png)
 
 ## Installation
 
@@ -19,6 +19,23 @@ Insert an octicons.css file in your html file to load the icons.
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css">
 ```
 
+## Usage
+
+The most common use case is to register the component globally.
+
+```js
+//in your app.js or similar file
+import Vue from 'vue';
+import {GithubFeed} from 'vue-github-activity';
+
+Vue.use(GithubFeed);
+```
+
+On your template you can now use html like this to render the activity feed: 
+
+```html
+<github-feed></github-feed>
+```
 
 ## License
 
