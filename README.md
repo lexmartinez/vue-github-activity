@@ -1,7 +1,7 @@
-# :octocat: vue-github-activity
+# vue-github-activity
 Simple VueJS component that creates a feed panel with your recent GitHub activity. It displays the user's name, username, photo, and a list of each individual activity type.
 
-> Inspired by [this repository](https://github.com/caseyscarborough/github-activity).
+> Inspired by [caseyscarborough/github-activity](https://github.com/caseyscarborough/github-activity) repository.
 
 See it in action on [my website](https://lexmartinez.com/)
 
