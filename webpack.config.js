@@ -51,7 +51,7 @@ module.exports = [
     output: {
       filename: 'vue-github-activity.js',
       libraryTarget: 'umd',
-      library: 'vue-github-activity',
+      library: 'github-feed',
       umdNamedDefine: true
     }
   })
