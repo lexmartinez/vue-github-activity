@@ -28,7 +28,7 @@
                                 <a style="color: #0275d8" :href="parse(event).actionUrl"> {{event.repo.name}} </a>
                             </div>
                             <div class="event-time" v-if="event">
-                                {{moment(event.created_at).fromNow()}}
+                                {{fromNow(event.created_at)}}
                             </div>
                     </div>
                 </div>
