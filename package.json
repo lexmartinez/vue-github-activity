@@ -13,7 +13,7 @@
     "url": "git+https://github.com/lexmartinez/vue-github-activity"
   },
   "dependencies": {
-    "vue-moment-jalaali": "^2.0.0"
+    "moment": "^2.18.1"
   },
   "devDependencies": {
     "axios": "^0.18.0",

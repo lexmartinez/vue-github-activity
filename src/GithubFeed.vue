@@ -43,6 +43,7 @@
 
 <script>
   import service from './GithubService'
+  import moment from 'moment'
 
   export default {
     name: 'github-feed',
@@ -78,6 +79,9 @@
         })
     },
     methods: {
+      fromNow(time) {
+        return moment(time).fromNow()
+      },
       parse(event){
         let actionType = 'move';
         let icon = 'octicon-git-commit dashboard-event-icon';
