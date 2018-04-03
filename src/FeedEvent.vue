@@ -1,5 +1,5 @@
 <template>
-    <div class="github-event">
+    <div class="github-event" v-if="event">
         <span class="event-octicon octicon" :class="octicon"></span>
         <div style="display: inline-block; font-size: 13px">
             <a>{{event.actor.login}}</a> {{actionType}}
