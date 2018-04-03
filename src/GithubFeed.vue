@@ -28,7 +28,7 @@
                                 <a style="color: #0275d8" :href="actionUrl ? actionUrl : event.repo.url"> {{event.repo.name}} </a>
                             </div>
                             <div class="event-time" v-if="event">
-                                {{moment(event.created_at).fromNow()}}
+                                {{event.created_at}}
                             </div>
                     </div>
                 </div>
@@ -43,7 +43,6 @@
 
 <script>
   import service from './GithubService'
-  import moment from 'moment'
 
   export default {
     name: 'github-feed',

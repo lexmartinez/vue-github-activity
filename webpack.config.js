@@ -25,8 +25,7 @@ var config = {
     ]
   },
   externals: {
-    axios: 'axios',
-    moment: 'moment'
+    axios: 'axios'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin( {
