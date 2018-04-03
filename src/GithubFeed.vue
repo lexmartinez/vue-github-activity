@@ -22,7 +22,7 @@
             <div class="feed-list">
                 <div class="event-list">
                     <div v-for="event in events" :key="event.id">
-                        <feed-event v-bind:event="event"></feed-event>
+                        <feed-event :event="event"></feed-event>
                     </div>
                 </div>
             </div>
