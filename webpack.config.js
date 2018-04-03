@@ -25,7 +25,8 @@ var config = {
     ]
   },
   externals: {
-    axios: 'axios'
+    axios: 'axios',
+    'vue-moment-jalaali':'vue-moment-jalaali'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin( {
