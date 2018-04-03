@@ -2,6 +2,7 @@
     <div>
         <h1>{{user.name}} <small>{{user.login}}</small></h1>
         <img :src="user.avatar_url"/>
+        <h3>{{events.length}}</h3>
     </div>
 </template>
 
@@ -22,9 +23,16 @@
     created() {
       service.user(this.login)
         .then(response => {
-          this.loading = false
           this.user = response.data
-          this.error = false
+          service.user(this.login).then(events => {
+            this.loading = false
+            this.error = false
+            this.events = events.data
+          }).catch(e => {
+            this.loading = false
+            this.error = true
+          })
+
         })
         .catch(e => {
           this.loading = false
