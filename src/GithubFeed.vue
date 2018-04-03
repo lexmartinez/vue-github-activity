@@ -4,7 +4,13 @@
 
 <script>
   export default {
-    name: 'github-feed'
+    name: 'github-feed',
+    props: {
+      user: { required: true }
+    },
+    created() {
+      console.log(this.props.user)
+    }
   }
 </script>
 
