@@ -21,8 +21,15 @@
         <div class="events-wrapper">
             <div class="feed-list">
                 <div class="event-list">
-                    <div v-for="event in events" :key="event.id">
-                        <feed-event :event="event"></feed-event>
+                    <div class="github-event" v-for="event in events" :key="event.id">
+                            <span class="event-octicon octicon" :class="octicon"></span>
+                            <div style="display: inline-block; font-size: 13px" v-if="event">
+                                <a>{{event.actor.login}}</a> {{actionType}}
+                                <a style="color: #0275d8" :href="actionUrl ? actionUrl : event.repo.url"> {{event.repo.name}} </a>
+                            </div>
+                            <div class="event-time" v-if="event">
+                                {{moment(event.created_at).fromNow()}}
+                            </div>
                     </div>
                 </div>
             </div>
@@ -36,19 +43,20 @@
 
 <script>
   import service from './GithubService'
-  import FeedEvent from './FeedEvent.vue'
 
   export default {
     name: 'github-feed',
     props: {
       login: { required: true }
     },
-    components: [FeedEvent],
     data: () => ({
       user: {},
       events: [],
       loading: false,
-      error: false
+      error: false,
+      actionType: 'pushed',
+      octicon: 'octicon-issue-closed dashboard-event-icon',
+      actionUrl: ''
     }),
     created() {
       service.user(this.login)
@@ -156,5 +164,20 @@
         position: absolute;
         width: 100%;
         min-height: 100px;
+    }
+    .github-event {
+        border-top: 1px solid #f1f1f1;
+        padding: 1em 0 0;
+        padding: 1.5em 0 1.5em 25px;
+    }
+    .event-octicon {
+        color: #bbb;
+        margin-right: 10px;
+    }
+    .event-time {
+        display: inline-block;
+        font-size: 12px;
+        margin-left: 3px;
+        color: #bbb;
     }
 </style>
