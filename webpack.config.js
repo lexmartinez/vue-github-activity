@@ -51,6 +51,14 @@ module.exports = [
     }
   }),
   merge(config, {
+    entry: path.resolve(__dirname + '/src/plugin.js'),
+    output: {
+      filename: 'vue-github-activity.min.js',
+      libraryTarget: 'window',
+      library: 'FeedEvent',
+    }
+  }),
+  merge(config, {
     entry: path.resolve(__dirname + '/src/GithubFeed.vue'),
     output: {
       filename: 'vue-github-activity.js',
