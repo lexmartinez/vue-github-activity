@@ -24,11 +24,11 @@
                     <div class="github-event" v-for="event in events" :key="event.id">
                             <span class="event-octicon octicon" :class="parse(event).icon"></span>
                             <div style="display: inline-block; font-size: 13px" v-if="event">
-                                <a>{{event.actor.login}}</a> {{parse(event).actionType}}
+                                <a>{{event.actor.login}}</a> <b>{{parse(event).actionType}}</b>
                                 <a style="color: #0275d8" :href="parse(event).actionUrl"> {{event.repo.name}} </a>
                             </div>
                             <div class="event-time" v-if="event">
-                                {{event.created_at}}
+                                {{moment(event.created_at).fromNow()}}
                             </div>
                     </div>
                 </div>
