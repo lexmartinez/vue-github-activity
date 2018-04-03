@@ -9,7 +9,7 @@
       user: { required: true }
     },
     created() {
-      console.log(this.props.user)
+      console.log(this.user)
     }
   }
 </script>
