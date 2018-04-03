@@ -5,7 +5,7 @@ Simple VueJS component that creates a feed panel with your recent GitHub activit
 
 See it in action on [my website](https://lexmartinez.com/)
 
-![](https://lexmartinez.com/static/faviconx.png)
+![](https://github.com/lexmartinez/vue-github-activity/raw/master/dist/screenshot.png)
 
 ## Installation
 
