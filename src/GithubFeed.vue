@@ -24,7 +24,7 @@
       service.user(this.login)
         .then(response => {
           this.user = response.data
-          service.user(this.login).then(events => {
+          service.events(this.login).then(events => {
             this.loading = false
             this.error = false
             this.events = events.data
