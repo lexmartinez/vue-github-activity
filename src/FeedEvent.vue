@@ -1,7 +1,7 @@
 <template>
-    <div class="github-event" v-if="event">
+    <div class="github-event">
         <span class="event-octicon octicon" :class="octicon"></span>
-        <div style="display: inline-block; font-size: 13px">
+        <div style="display: inline-block; font-size: 13px" v-if="event">
             <a>{{event.actor.login}}</a> {{actionType}}
             <a style="color: #0275d8" :href="actionUrl ? actionUrl : event.repo.url"> {{event.repo.name}} </a>
         </div>
@@ -18,7 +18,7 @@
       event: { required: true }
     },
     data: () => ({
-      actionType: 'action',
+      actionType: 'pushed',
       octicon: 'octicon-issue-closed dashboard-event-icon',
       actionUrl: ''
     })
