@@ -22,10 +22,10 @@
             <div class="feed-list">
                 <div class="event-list">
                     <div class="github-event" v-for="event in events" :key="event.id">
-                            <span class="event-octicon octicon" :class="octicon"></span>
+                            <span class="event-octicon octicon" :class="parse(event).icon"></span>
                             <div style="display: inline-block; font-size: 13px" v-if="event">
-                                <a>{{event.actor.login}}</a> {{actionType}}
-                                <a style="color: #0275d8" :href="actionUrl ? actionUrl : event.repo.url"> {{event.repo.name}} </a>
+                                <a>{{event.actor.login}}</a> {{parse(event).actionType}}
+                                <a style="color: #0275d8" :href="parse(event).actionUrl"> {{event.repo.name}} </a>
                             </div>
                             <div class="event-time" v-if="event">
                                 {{event.created_at}}
@@ -76,6 +76,40 @@
           this.loading = false
           this.error = true
         })
+    },
+    methods: {
+      parse(event){
+        let actionType = 'move';
+        let icon = 'octicon-git-commit dashboard-event-icon';
+        let actionUrl = event.repo.url;
+
+        if (event.type === 'WatchEvent') {
+          actionType = 'starred';
+          icon = "octicon-star dashboard-event-icon";
+        } else if (event.type === 'PushEvent') {
+          actionType = 'pushed';
+          icon = "octicon-git-commit dashboard-event-icon";
+        } else if (event.type === 'IssuesEvent') {
+          if (event.action === 'closed') {
+            actionType = event.action;
+            icon = 'octicon-issue-closed dashboard-event-icon';
+          } else if (event.action === 'opened') {
+            actionType = event.action;
+            icon = 'octicon-issue-opened dashboard-event-icon';
+          } else if (event.action === 'commented') {
+            actionType = 'commented on';
+            icon = 'octicon octicon-comment-discussion dashboard-event-icon'
+          }
+        } else if (event.type === 'IssueCommentEvent') {
+          icon = 'octicon-comment-discussion dashboard-event-icon';
+          actionType = 'commented on';
+          actionUrl = event.comment['html_url'];
+        }
+
+        return {
+            icon, actionType, actionUrl
+        }
+      }
     }
   }
 </script>
@@ -84,7 +118,7 @@
     .feed {
         position: relative;
         display: table;
-        height: 100%;
+        height: 500px;
         min-height: 200px;
         width: 100%;
         min-width: 500px;
