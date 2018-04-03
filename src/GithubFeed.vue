@@ -92,7 +92,10 @@
         } else if (event.type === 'ForkEvent') {
           actionType = 'forked';
           icon = "octicon-repo-forked dashboard-event-icon";
-        }else if (event.type === 'IssuesEvent') {
+        } else if (event.type === 'CreatedEvent') {
+          actionType = 'created';
+          icon = "octicon-repo dashboard-event-icon";
+        } else if (event.type === 'IssuesEvent') {
           if (event.payload.action === 'closed') {
             actionType = event.payload.action;
             icon = 'octicon-issue-closed dashboard-event-icon';
