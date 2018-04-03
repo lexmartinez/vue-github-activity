@@ -43,6 +43,7 @@
 
 <script>
   import service from './GithubService'
+  import moment from 'moment'
 
   export default {
     name: 'github-feed',
