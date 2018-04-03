@@ -21,25 +21,29 @@
         <div class="events-wrapper">
             <div class="feed-list">
                 <div class="event-list">
-                    {{events.length}}
+                    <div v-for="event in events" :key="event.id">
+                        <feed-event event="event"></feed-event>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer-wrapper">
             <p style="display: inline">Public Activity</p>
-            <a stlye="float: right; color: #232323" href="https://github.com/lexmartinez/vue-github-activity">GitHub Activity Feed</a>
+            <a style="float: right; color: #232323" target="_blank" href="https://github.com/lexmartinez/vue-github-activity">GitHub Activity Feed</a>
         </div>
     </div>
 </template>
 
 <script>
   import service from './GithubService'
+  import FeedEvent from './FeedEvent.vue'
 
   export default {
     name: 'github-feed',
     props: {
       login: { required: true }
     },
+    components: [FeedEvent],
     data: () => ({
       user: {},
       events: [],
@@ -70,7 +74,6 @@
 
 <style scoped>
     .feed {
-        padding: 10px;
         position: relative;
         display: table;
         height: 100%;
@@ -139,5 +142,19 @@
         font-size: 13px;
         border-top: 1px solid #ddd;
         font-family: Helvetica, arial, freesans, clean, sans-serif;
+    }
+    .events-wrapper {
+        height: 100%;
+        display: table-row;
+    }
+    .feed-list {
+        overflowY: auto;
+        position: relative;
+        display: table-cell;
+    }
+    .event-list {
+        position: absolute;
+        width: 100%;
+        min-height: 100px;
     }
 </style>

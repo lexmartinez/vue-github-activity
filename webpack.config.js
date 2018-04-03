@@ -25,7 +25,8 @@ var config = {
     ]
   },
   externals: {
-    axios: 'axios'
+    axios: 'axios',
+    moment: 'moment'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin( {
@@ -57,5 +58,5 @@ module.exports = [
       library: 'github-feed',
       umdNamedDefine: true
     }
-  })
+  }),
 ];
