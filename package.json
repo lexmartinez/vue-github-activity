@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/lexmartinez/vue-github-activity"
   },
+  "dependencies": {
+    "vue-moment-jalaali": "^2.0.0"
+  },
   "devDependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.10.4",
@@ -29,7 +32,6 @@
     "vue-style-loader": "^2.0.3",
     "vue-template-compiler": "^2.2.1",
     "webpack": "1.13.1",
-    "webpack-merge": "^4.1.0",
-    "vue-moment-jalaali": "^2.0.0"
+    "webpack-merge": "^4.1.0"
   }
 }
