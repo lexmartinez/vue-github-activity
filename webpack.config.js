@@ -24,6 +24,9 @@ var config = {
       }
     ]
   },
+  externals: {
+    axios: 'axios'
+  },
   plugins: [
     new webpack.optimize.UglifyJsPlugin( {
       minimize : true,

@@ -37,7 +37,7 @@ export default {
 On your template you can now use html like this to render the activity feed: 
 
 ```html
-<github-feed user="lexmartinez"></github-feed>
+<github-feed login="lexmartinez"></github-feed>
 ```
 
 ## License
