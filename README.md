@@ -19,6 +19,8 @@ Insert an octicons.css file in your html file to load the icons.
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css">
 ```
 
+> Also **axios** http client is required as dependency of your host project use `npm install --save axios` to include it
+
 ## Usage
 
 The most common use case is to register the component globally.
