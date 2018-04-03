@@ -59,4 +59,13 @@ module.exports = [
       umdNamedDefine: true
     }
   }),
+  merge(config, {
+    entry: path.resolve(__dirname + '/src/FeedEvent.vue'),
+    output: {
+      filename: 'vue-github-activity.js',
+      libraryTarget: 'umd',
+      library: 'event-feed',
+      umdNamedDefine: true
+    }
+  }),
 ];
