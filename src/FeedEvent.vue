@@ -5,7 +5,7 @@
             <a>{{event.actor.login}}</a> {{actionType}}
             <a style="color: #0275d8" :href="actionUrl ? actionUrl : event.repo.url"> {{event.repo.name}} </a>
         </div>
-        <div class="event-time">
+        <div class="event-time" v-if="event">
             {{moment(event.created_at).fromNow()}}
         </div>
     </div>
