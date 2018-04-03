@@ -90,20 +90,20 @@
           actionType = 'pushed';
           icon = "octicon-git-commit dashboard-event-icon";
         } else if (event.type === 'IssuesEvent') {
-          if (event.action === 'closed') {
-            actionType = event.action;
+          if (event.payload.action === 'closed') {
+            actionType = event.payload.action;
             icon = 'octicon-issue-closed dashboard-event-icon';
-          } else if (event.action === 'opened') {
-            actionType = event.action;
+          } else if (event.payload.action === 'opened') {
+            actionType = event.payload.action;
             icon = 'octicon-issue-opened dashboard-event-icon';
-          } else if (event.action === 'commented') {
+          } else if (event.payload.action === 'commented') {
             actionType = 'commented on';
             icon = 'octicon octicon-comment-discussion dashboard-event-icon'
           }
         } else if (event.type === 'IssueCommentEvent') {
           icon = 'octicon-comment-discussion dashboard-event-icon';
           actionType = 'commented on';
-          actionUrl = event.comment['html_url'];
+          actionUrl = event.issue.html_url;
         }
 
         return {
@@ -190,7 +190,7 @@
         display: table-row;
     }
     .feed-list {
-        overflowY: auto;
+        overflow-y: auto;
         position: relative;
         display: table-cell;
     }
