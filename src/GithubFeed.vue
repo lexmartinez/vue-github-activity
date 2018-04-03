@@ -103,7 +103,7 @@
         } else if (event.type === 'IssueCommentEvent') {
           icon = 'octicon-comment-discussion dashboard-event-icon';
           actionType = 'commented on';
-          actionUrl = event.issue.html_url;
+          actionUrl = event.payload.comment.html_url;
         }
 
         return {
