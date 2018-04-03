@@ -59,9 +59,9 @@
 
 <style scoped>
     .feed {
+        padding: 10px; *
         position: relative;
         display: table;
-        border: 1px solid #ddd;
         height: 100%;
         min-height: 200px;
         width: 100%;
@@ -121,6 +121,7 @@
         padding: 6px 10px 5px;
         color: #495961;
         font-size: 20px;
-        text-decoration: none
+        text-decoration: none;
+        margin-left: 10px;
     }
 </style>
