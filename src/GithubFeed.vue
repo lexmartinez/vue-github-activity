@@ -18,6 +18,17 @@
                 </div>
             </div>
         </div>
+        <div class="events-wrapper">
+            <div class="feed-list">
+                <div class="event-list">
+                    {{events.length}}
+                </div>
+            </div>
+        </div>
+        <div class="footer-wrapper">
+            <p style="display: inline">Public Activity</p>
+            <a stlye="float: right; color: #232323" href="https://github.com/lexmartinez/vue-github-activity">GitHub Activity Feed</a>
+        </div>
     </div>
 </template>
 
@@ -59,7 +70,7 @@
 
 <style scoped>
     .feed {
-        padding: 10px; *
+        padding: 10px;
         position: relative;
         display: table;
         height: 100%;
@@ -70,7 +81,6 @@
         font-size: 1rem;
         color: #373a3c
     }
-    
     .header-wrapper {
         display: table-row;
         height: 1px
@@ -82,7 +92,6 @@
         padding: 10px;
         border-bottom: 1px solid #ddd
     }
-
     .avatar-wrapper {
         display: inline;
         float: right;
@@ -123,5 +132,12 @@
         font-size: 20px;
         text-decoration: none;
         margin-left: 10px;
+    }
+    .footer-wrapper {
+        padding: 5px;
+        font-weight: bold;
+        font-size: 13px;
+        border-top: 1px solid #ddd;
+        font-family: Helvetica, arial, freesans, clean, sans-serif;
     }
 </style>
