@@ -131,7 +131,7 @@
         height: 500px;
         min-height: 200px;
         width: 100%;
-        min-width: 500px;
+        min-width: 100%;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
         font-size: 1rem;
         color: #373a3c
@@ -223,5 +223,14 @@
         font-size: 12px;
         margin-left: 3px;
         color: #bbb;
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        .event-octicon {
+            display: none !important;
+        }
     }
 </style>
