@@ -1,6 +1,6 @@
 {
   "name": "vue-github-activity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue based github feed activity component.",
   "main": "dist/vue-github-activity.js",
   "scripts": {
@@ -12,6 +12,16 @@
     "type": "git",
     "url": "git+https://github.com/lexmartinez/vue-github-activity"
   },
+  "keywords": [
+    "github-activity",
+    "vuejs",
+    "vue-component",
+    "github"
+  ],
+  "bugs": {
+    "url": "https://github.com/lexmartinez/vue-github-activity/issues"
+  },
+  "homepage": "https://www.npmjs.com/package/vue-github-activity",
   "dependencies": {
     "moment": "^2.18.1"
   },
