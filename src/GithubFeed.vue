@@ -230,7 +230,7 @@
     and (max-device-width: 480px)
     and (-webkit-min-device-pixel-ratio: 2) {
         .event-octicon {
-            display: none;
+            display: none !important;
         }
     }
 </style>
