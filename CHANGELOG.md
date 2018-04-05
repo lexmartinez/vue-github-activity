@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
     - IssuesEvent
     - IssueCommentEvent
 
-## 1.0.1
+## v1.0.1
 
 - **[FIX]** Responsive feed behaviour
 - **[ADD]** `package.json` keywords
