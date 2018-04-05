@@ -131,7 +131,7 @@
         height: 500px;
         min-height: 200px;
         width: 100%;
-        min-width: 500px;
+        min-width: 100%;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
         font-size: 1rem;
         color: #373a3c
