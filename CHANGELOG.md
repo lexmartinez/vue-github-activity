@@ -2,9 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.0.0 - `Riley`
+
+- **[FIX]** Scope styles removed for external styling customization
+- **[FIX]** Event Detail Component
+- **[ADD]** New Events Handled:
+                - ...
+
+## v1.0.1
+
+- **[FIX]** Responsive feed behaviour
+- **[ADD]** `package.json` keywords
+- **[ADD]** `CHANGELOG.md` file added
+
 ## v1.0.0 - `MVP`
 
-- **[INIT]** Initial Compponent Implementation
+- **[INIT]** Initial Component Implementation
 - **[INIT]** Basic Events Handling:
     - WatchEvent
     - PushEvent
@@ -12,9 +25,3 @@ All notable changes to this project will be documented in this file.
     - CreateEvent
     - IssuesEvent
     - IssueCommentEvent
-
-## v1.0.1
-
-- **[FIX]** Responsive feed behaviour
-- **[ADD]** `package.json` keywords
-- **[ADD]** `CHANGELOG.md` file added
