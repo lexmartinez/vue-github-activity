@@ -124,7 +124,7 @@
   }
 </script>
 
-<style scoped>
+<style>
     .feed {
         position: relative;
         display: table;
