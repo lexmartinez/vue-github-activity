@@ -1,6 +1,6 @@
 {
   "name": "vue-github-activity",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A Vue based github feed activity component.",
   "main": "dist/vue-github-activity.js",
   "scripts": {
