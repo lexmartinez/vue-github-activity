@@ -3,7 +3,7 @@
 import axios from 'axios'
 
 const client = axios.create({
-  baseURL: 'https://api.github.com/users/'
+  baseURL: 'https://api.github.com/users/',
 })
 
 export default {
@@ -12,5 +12,5 @@ export default {
   },
   events: (login) => {
     return client.get(login + '/events')
-  }
+  },
 }
