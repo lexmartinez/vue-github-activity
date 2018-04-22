@@ -29,17 +29,13 @@ Insert an octicons.css file in your html file to load the icons.
 
 ## Usage
 
-The most common use case is to register the component globally.
+The most common use case is to register all the components globally.
 
-```js
-//in your host component
-import {GithubFeed} from 'vue-github-activity';
+```javascript
+import Vue from 'vue'
+import VueGithubActivity from 'vue-github-activity'
 
-export default {
-  name: 'HostComponent',
-  components: { GithubFeed },
-  resource: 'HostComponent'
-} ...
+Vue.use(VueGithubActivity)
 ```
 
 On your template you can now use html like this to render the activity feed: 
