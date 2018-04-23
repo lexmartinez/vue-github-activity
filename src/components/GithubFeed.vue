@@ -22,8 +22,9 @@
             <div class="feed-list">
                 <div class="event-list">
                     <div v-for="event in events">
-                        <github-event :event="event"  :key="event.id" v-if="event.type!=='PushEvent'" ></github-event>
-                        <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'" ></push-event>
+                        <github-event :event="event"  :key="event.id" v-if="isGenericEvent(event)"></github-event>
+                        <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'"></push-event>
+                        <pull-request-event :event="event"  :key="event.id" v-if="event.type==='PullRequestEvent'"></pull-request-event>
                     </div>
                 </div>
             </div>
@@ -69,6 +70,11 @@
           this.loading = false
           this.error = true
         })
+    },
+    methods: {
+      isGenericEvent (event) {
+        return event.type !== 'PushEvent' && event.type !== 'PullRequestEvent'
+      },
     },
   }
 </script>
