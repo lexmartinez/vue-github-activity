@@ -10,7 +10,6 @@
     "build": "npm run build:browser && npm run build:common",
     "build:browser": "cross-env NODE_ENV=production webpack --config config/webpack.config.browser.js --progress --hide-modules",
     "build:common": "cross-env NODE_ENV=production webpack --config config/webpack.config.common.js --progress --hide-modules",
-    "prepublish": "npm run build"
   },
   "author": "Lex Martinez <lex0316@gmail.com>",
   "license": "MIT",

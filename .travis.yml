@@ -4,5 +4,7 @@ node_js:
 branches:
   only:
   - master
-script:
+before_script:
   - npm install
+script:
+  - npm run build
