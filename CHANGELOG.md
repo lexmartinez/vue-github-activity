@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
    - CreateEvent
    - DeleteEvent
    - WatchEvent
+   - IssuesEvent
+   - ForkEvent
+- **[DEL]** Removed Generic GithubEvent Component
 
 ## v1.0.1
 

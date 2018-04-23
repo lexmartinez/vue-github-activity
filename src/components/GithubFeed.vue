@@ -22,12 +22,14 @@
             <div class="feed-list">
                 <div class="event-list">
                     <div v-for="event in events">
-                        <github-event :event="event"  :key="event.id" v-if="isGenericEvent(event)"></github-event>
                         <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'"></push-event>
                         <pull-request-event :event="event"  :key="event.id" v-if="event.type==='PullRequestEvent'"></pull-request-event>
                         <create-event :event="event"  :key="event.id" v-if="event.type==='CreateEvent'"></create-event>
                         <watch-event :event="event"  :key="event.id" v-if="event.type==='WatchEvent'"></watch-event>
                         <delete-event :event="event"  :key="event.id" v-if="event.type==='DeleteEvent'"></delete-event>
+                        <issues-event :event="event"  :key="event.id" v-if="event.type==='IssuesEvent'"></issues-event>
+                        <issue-comment-event :event="event"  :key="event.id" v-if="event.type==='IssueCommentEvent'"></issue-comment-event>
+                        <fork-event :event="event"  :key="event.id" v-if="event.type==='ForkEvent'"></fork-event>
                     </div>
                 </div>
             </div>
@@ -70,12 +72,6 @@
           this.loading = false
           this.error = true
         })
-    },
-    methods: {
-      isGenericEvent (event) {
-        return event.type !== 'PushEvent' && event.type !== 'PullRequestEvent' && event.type !== 'CreateEvent' &&
-            event.type !== 'WatchEvent' && event.type !== 'DeleteEvent'
-      },
     },
   }
 </script>
