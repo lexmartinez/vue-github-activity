@@ -6,8 +6,8 @@ All notable changes to this project will be documented in this file.
 
 - **[FIX]** Scope styles removed for external styling customization
 - **[FIX]** Event Detail Component
-- **[ADD]** New Events Handled:
-                - ...
+- **[ADD]** Events Handling Improvement:
+   - PushEvent
 
 ## v1.0.1
 

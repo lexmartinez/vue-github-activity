@@ -21,7 +21,10 @@
         <div class="events-wrapper">
             <div class="feed-list">
                 <div class="event-list">
-                    <github-event :event="event"  v-for="event in events" :key="event.id"></github-event>
+                    <div v-for="event in events">
+                        <github-event :event="event"  :key="event.id" v-if="event.type!=='PushEvent'" ></github-event>
+                        <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'" ></push-event>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,13 +38,14 @@
 <script>
   import service from '../services/GithubService'
   import GithubEvent from '../components/GithubEvent.vue'
+  import PushEvent from '../components/events/PushEvent.vue'
 
   export default {
     name: 'github-feed',
     props: {
       login: { required: true },
     },
-    components: {GithubEvent},
+    components: {GithubEvent, PushEvent},
     data: () => ({
       user: {},
       events: [],
@@ -133,6 +137,10 @@
         text-decoration: none;
         margin-left: 10px;
     }
+    .github-profile:hover {
+        color: #495961;
+        text-decoration: none;
+    }
     .footer-wrapper {
         padding: 5px;
         font-weight: bold;
@@ -153,5 +161,41 @@
         position: absolute;
         width: 100%;
         min-height: 100px;
+    }
+    .github-event {
+        border-top: 1px solid #f1f1f1;
+        padding: 1em 0 0;
+        padding: 1.5em 0 1.5em 25px;
+    }
+    .event-octicon {
+        color: #bbb;
+        margin-right: 10px;
+    }
+    .event-time {
+        display: inline-block;
+        font-size: 12px;
+        margin-left: 3px;
+        color: #bbb;
+    }
+    .event-link {
+        color: #1798d8;
+    }
+    .event-link:hover {
+        color: #1798d8;
+    }
+    .event-text {
+        font-size: 13px
+    }
+    .event-detail {
+        color: #666666;
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        .event-octicon {
+            display: none !important;
+        }
     }
 </style>
