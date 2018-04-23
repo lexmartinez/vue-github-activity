@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 - **[FIX]** Event Detail Component
 - **[ADD]** Events Handling Improvement:
    - PushEvent
+   - PullRequestEvent
+   - CreateEvent
+   - DeleteEvent
+   - WatchEvent
+   - IssuesEvent
+   - ForkEvent
+- **[DEL]** Removed Generic GithubEvent Component
 
 ## v1.0.1
 

@@ -22,8 +22,14 @@
             <div class="feed-list">
                 <div class="event-list">
                     <div v-for="event in events">
-                        <github-event :event="event"  :key="event.id" v-if="event.type!=='PushEvent'" ></github-event>
-                        <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'" ></push-event>
+                        <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'"></push-event>
+                        <pull-request-event :event="event"  :key="event.id" v-if="event.type==='PullRequestEvent'"></pull-request-event>
+                        <create-event :event="event"  :key="event.id" v-if="event.type==='CreateEvent'"></create-event>
+                        <watch-event :event="event"  :key="event.id" v-if="event.type==='WatchEvent'"></watch-event>
+                        <delete-event :event="event"  :key="event.id" v-if="event.type==='DeleteEvent'"></delete-event>
+                        <issues-event :event="event"  :key="event.id" v-if="event.type==='IssuesEvent'"></issues-event>
+                        <issue-comment-event :event="event"  :key="event.id" v-if="event.type==='IssueCommentEvent'"></issue-comment-event>
+                        <fork-event :event="event"  :key="event.id" v-if="event.type==='ForkEvent'"></fork-event>
                     </div>
                 </div>
             </div>
@@ -37,15 +43,12 @@
 
 <script>
   import service from '../services/GithubService'
-  import GithubEvent from '../components/GithubEvent.vue'
-  import PushEvent from '../components/events/PushEvent.vue'
 
   export default {
     name: 'github-feed',
     props: {
       login: { required: true },
     },
-    components: {GithubEvent, PushEvent},
     data: () => ({
       user: {},
       events: [],
