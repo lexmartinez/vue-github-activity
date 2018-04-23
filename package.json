@@ -1,6 +1,6 @@
 {
   "name": "vue-github-activity",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A Vue based github feed activity component.",
   "main": "dist/vue-github-activity.common.js",
   "unpkg": "dist/vue-github-activity.browser.js",
@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development webpack --config config/webpack.config.dev.js --progress --watch",
     "build": "npm run build:browser && npm run build:common",
     "build:browser": "cross-env NODE_ENV=production webpack --config config/webpack.config.browser.js --progress --hide-modules",
-    "build:common": "cross-env NODE_ENV=production webpack --config config/webpack.config.common.js --progress --hide-modules",
+    "build:common": "cross-env NODE_ENV=production webpack --config config/webpack.config.common.js --progress --hide-modules"
   },
   "author": "Lex Martinez <lex0316@gmail.com>",
   "license": "MIT",
