@@ -25,6 +25,9 @@
                         <github-event :event="event"  :key="event.id" v-if="isGenericEvent(event)"></github-event>
                         <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'"></push-event>
                         <pull-request-event :event="event"  :key="event.id" v-if="event.type==='PullRequestEvent'"></pull-request-event>
+                        <create-event :event="event"  :key="event.id" v-if="event.type==='CreateEvent'"></create-event>
+                        <watch-event :event="event"  :key="event.id" v-if="event.type==='WatchEvent'"></watch-event>
+                        <delete-event :event="event"  :key="event.id" v-if="event.type==='DeleteEvent'"></delete-event>
                     </div>
                 </div>
             </div>
@@ -38,15 +41,12 @@
 
 <script>
   import service from '../services/GithubService'
-  import GithubEvent from '../components/GithubEvent.vue'
-  import PushEvent from '../components/events/PushEvent.vue'
 
   export default {
     name: 'github-feed',
     props: {
       login: { required: true },
     },
-    components: {GithubEvent, PushEvent},
     data: () => ({
       user: {},
       events: [],
@@ -73,7 +73,8 @@
     },
     methods: {
       isGenericEvent (event) {
-        return event.type !== 'PushEvent' && event.type !== 'PullRequestEvent'
+        return event.type !== 'PushEvent' && event.type !== 'PullRequestEvent' && event.type !== 'CreateEvent' &&
+            event.type !== 'WatchEvent' && event.type !== 'DeleteEvent'
       },
     },
   }

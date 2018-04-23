@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 - **[FIX]** Event Detail Component
 - **[ADD]** Events Handling Improvement:
    - PushEvent
+   - PullRequestEvent
+   - CreateEvent
+   - DeleteEvent
+   - WatchEvent
 
 ## v1.0.1
 

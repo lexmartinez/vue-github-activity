@@ -3,7 +3,7 @@
         <span class="event-octicon octicon octicon-git-pull-request dashboard-event-icon"></span>
         <div style="display: inline-block;" class="event-text" v-if="event">
             <a>{{event.actor.login}}</a> <b>
-            {{event.payload.action}} pull request<a class="event-link" :href="event.payload.pull_request.html_url" target="_blank">#{{event.payload.number}}</a>
+            {{event.payload.action}} pull request<a class="event-link" :href="event.payload.pull_request.html_url" target="_blank"> #{{event.payload.number}}</a>
             at <a class="event-link" :href="'https://github.com/' + event.repo.name" target="_blank">{{event.repo.name}}</a></b>
         </div>
         <div class="event-time" v-if="event">
