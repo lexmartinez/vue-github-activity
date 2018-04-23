@@ -3,7 +3,7 @@
         <span class='event-octicon octicon' :class='parse(event).icon'></span>
         <div style='display: inline-block; font-size: 13px' v-if='event'>
             <a>{{event.actor.login}}</a> <b>{{parse(event).actionType}}</b>
-            <a style='color: #0275d8' :href='parse(event).actionUrl'> {{event.repo.name}} </a>
+            <a class="event-link" :href='parse(event).actionUrl'> {{event.repo.name}} </a>
         </div>
         <div class='event-time' v-if='event'>
             {{fromNow(event.created_at)}}
@@ -65,29 +65,4 @@
   }
 </script>
 
-<style>
-    .github-event {
-        border-top: 1px solid #f1f1f1;
-        padding: 1em 0 0;
-        padding: 1.5em 0 1.5em 25px;
-    }
-    .event-octicon {
-        color: #bbb;
-        margin-right: 10px;
-    }
-    .event-time {
-        display: inline-block;
-        font-size: 12px;
-        margin-left: 3px;
-        color: #bbb;
-    }
-
-    @media only screen
-    and (min-device-width: 320px)
-    and (max-device-width: 480px)
-    and (-webkit-min-device-pixel-ratio: 2) {
-        .event-octicon {
-            display: none !important;
-        }
-    }
-</style>
+<style></style>
