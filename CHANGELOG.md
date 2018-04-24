@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.1.0 - `Uma`
+
+- **[FIX]** Bundling issues (style sheet minify & travisCI fix)
+- **[ADD]** Format tools implementation
+- **[ADD]** New event types supported:
+   - ReleaseEvent
+   - PullRequestReviewCommentEvent
+   - PublicEvent
+   - MemberEvent
+   - GollumEvent
+   - GistEvent
+   - FollowEvent
+   - CommitCommentEvent
+
 ## v2.0.0 - `Riley`
 
 - **[FIX]** Scope styles removed for external styling customization
