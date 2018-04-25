@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import moment from 'moment'
+  import {fromNow, hash, branch} from '../../utils/FormatTools'
 
   export default {
     name: 'push-event',
@@ -26,15 +26,9 @@
       event: { required: true },
     },
     methods: {
-      fromNow (time) {
-        return moment(time).fromNow()
-      },
-      hash (sha) {
-        return sha.substr(sha.length - 6)
-      },
-      branch (ref) {
-        return ref.replace('refs/heads/', '')
-      },
+      fromNow,
+      hash,
+      branch,
     },
   }
 </script>

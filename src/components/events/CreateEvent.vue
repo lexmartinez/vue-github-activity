@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import moment from 'moment'
+  import {fromNow} from '../../utils/FormatTools'
 
   export default {
     name: 'create-event',
@@ -23,9 +23,7 @@
       event: { required: true },
     },
     methods: {
-      fromNow (time) {
-        return moment(time).fromNow()
-      },
+      fromNow,
       link (event) {
         if (event.payload.ref_type === 'branch') {
           return 'https://github.com/' + event.repo.name + '/tree/' + event.payload.ref

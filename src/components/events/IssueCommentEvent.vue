@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import moment from 'moment'
+  import {fromNow} from '../../utils/FormatTools'
 
   export default {
     name: 'issue-comment-event',
@@ -27,9 +27,7 @@
       event: { required: true },
     },
     methods: {
-      fromNow (time) {
-        return moment(time).fromNow()
-      },
+      fromNow,
     },
   }
 </script>
