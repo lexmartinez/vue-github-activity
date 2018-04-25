@@ -22,14 +22,16 @@
             <div class="feed-list">
                 <div class="event-list">
                     <div v-for="event in events">
-                        <push-event :event="event"  :key="event.id" v-if="event.type==='PushEvent'"></push-event>
-                        <pull-request-event :event="event"  :key="event.id" v-if="event.type==='PullRequestEvent'"></pull-request-event>
-                        <create-event :event="event"  :key="event.id" v-if="event.type==='CreateEvent'"></create-event>
-                        <watch-event :event="event"  :key="event.id" v-if="event.type==='WatchEvent'"></watch-event>
-                        <delete-event :event="event"  :key="event.id" v-if="event.type==='DeleteEvent'"></delete-event>
-                        <issues-event :event="event"  :key="event.id" v-if="event.type==='IssuesEvent'"></issues-event>
-                        <issue-comment-event :event="event"  :key="event.id" v-if="event.type==='IssueCommentEvent'"></issue-comment-event>
+                        <push-event :event="event" :key="event.id" v-if="event.type==='PushEvent'"></push-event>
+                        <pull-request-event :event="event" :key="event.id" v-if="event.type==='PullRequestEvent'"></pull-request-event>
+                        <create-event :event="event" :key="event.id" v-if="event.type==='CreateEvent'"></create-event>
+                        <watch-event :event="event" :key="event.id" v-if="event.type==='WatchEvent'"></watch-event>
+                        <delete-event :event="event" :key="event.id" v-if="event.type==='DeleteEvent'"></delete-event>
+                        <issues-event :event="event" :key="event.id" v-if="event.type==='IssuesEvent'"></issues-event>
+                        <issue-comment-event :event="event" :key="event.id" v-if="event.type==='IssueCommentEvent'"></issue-comment-event>
                         <fork-event :event="event"  :key="event.id" v-if="event.type==='ForkEvent'"></fork-event>
+                        <commit-comment-event :event="event" :key="event.id" v-if="event.type==='CommitCommentEvent'"></commit-comment-event>
+                        <public-event :event="event"  :key="event.id" v-if="event.type==='PublicEvent'"></public-event>
                     </div>
                 </div>
             </div>

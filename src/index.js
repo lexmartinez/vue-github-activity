@@ -7,6 +7,8 @@ import WatchEvent from './components/events/WatchEvent.vue'
 import IssuesEvent from './components/events/IssuesEvent.vue'
 import IssueCommentEvent from './components/events/IssueCommentEvent.vue'
 import ForkEvent from './components/events/ForkEvent.vue'
+import CommitCommentEvent from './components/events/CommitCommentEvent.vue'
+import PublicEvent from './components/events/PublicEvent.vue'
 
 export function install (Vue) {
   Vue.component('github-feed', GithubFeed)
@@ -17,7 +19,9 @@ export function install (Vue) {
   Vue.component('delete-event', DeleteEvent)
   Vue.component('issues-event', IssuesEvent)
   Vue.component('issue-comment-event', IssueCommentEvent)
+  Vue.component('commit-comment-event', CommitCommentEvent)
   Vue.component('fork-event', ForkEvent)
+  Vue.component('public-event', PublicEvent)
 }
 
 export {
@@ -30,6 +34,8 @@ export {
   IssuesEvent,
   IssueCommentEvent,
   ForkEvent,
+  CommitCommentEvent,
+  PublicEvent,
 }
 
 const plugin = {

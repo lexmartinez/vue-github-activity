@@ -7,13 +7,8 @@ All notable changes to this project will be documented in this file.
 - **[FIX]** Bundling issues (style sheet minify & travisCI fix)
 - **[ADD]** Format tools implementation
 - **[ADD]** New event types supported:
-   - ReleaseEvent
    - PullRequestReviewCommentEvent
    - PublicEvent
-   - MemberEvent
-   - GollumEvent
-   - GistEvent
-   - FollowEvent
    - CommitCommentEvent
 
 ## v2.0.0 - `Riley`
