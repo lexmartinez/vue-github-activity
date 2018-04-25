@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import moment from 'moment'
+  import {fromNow} from '../../utils/FormatTools'
 
   export default {
     name: 'fork-event',
@@ -22,9 +22,7 @@
       event: { required: true },
     },
     methods: {
-      fromNow (time) {
-        return moment(time).fromNow()
-      },
+      fromNow,
     },
   }
 </script>
