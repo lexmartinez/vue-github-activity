@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.1.1 - `Mia`
+
+- **[FIX]** Event list overflow handling on Firefox
+
 ## v2.1.0 - `Uma`
 
 - **[FIX]** Bundling issues (style sheet minify & travisCI fix)
